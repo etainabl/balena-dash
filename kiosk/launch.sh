@@ -20,14 +20,14 @@ fi
 if [[ ! -z $PERSISTENT ]] && [[ "$PERSISTENT" -eq "1" ]]
   then
     echo "Adding user settings directory"
-    FLAGS="$FLAGS --disable-infobars --user-data-dir=/data"
+    FLAGS="$FLAGS --user-data-dir=/data"
 
     # make sure any lock on the Chromium profile is released
     chown -R chromium:chromium /data
     rm -f /data/SingletonLock
 fi
 
-echo "chromium-browser $CHROME_LAUNCH_URL $KIOSK $FLAGS --window-size=$WINDOW_SIZE" >> /home/chromium/xstart.sh
+echo "chromium-browser $CHROME_LAUNCH_URL $KIOSK $FLAGS --user-agent=\"Etainabl Kiosk / ${BALENA_DEVICE_UUID:0:7} / $ETAINABL_KIOSK_ID / $ETAINABL_CLIENT_ID / $ETAINABL_CLIENT_SECRET\" --window-size=$WINDOW_SIZE" >> /home/chromium/xstart.sh
 
 
 # run script as chromium user
