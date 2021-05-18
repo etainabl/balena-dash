@@ -20,7 +20,7 @@ fi
 if [[ ! -z $PERSISTENT ]] && [[ "$PERSISTENT" -eq "1" ]]
   then
     echo "Adding user settings directory"
-    FLAGS="$FLAGS --user-data-dir=/data"
+    FLAGS="$FLAGS --disable-infobars --user-data-dir=/data"
 
     # make sure any lock on the Chromium profile is released
     chown -R chromium:chromium /data
