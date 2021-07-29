@@ -20,7 +20,7 @@ export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 # wget --spider http://google.com 2>&1
 
 # 4. Is there an active WiFi connection?
-sleep 30
+sleep 60
 
 iwgetid -r
 
