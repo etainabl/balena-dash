@@ -10,7 +10,9 @@ RUN go build
 
 FROM balenablocks/browser:V1
 
-RUN install_packages cec-utils python3
+RUN install_packages cec-utils python3 python3-pip python3-distutils
+
+RUN python3 -m pip install --user -U mss
 
 COPY --from=builder /go/src/github.com/mozz100/tohora /home/chromium/tohora
 
