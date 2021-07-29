@@ -6,8 +6,6 @@ sleep 10
 # delete the last line in xstart script and replace with new settings
 sed -i '$d' /home/chromium/xstart.sh
 
-tvservice -e $TVSERVICE_CONFIG
-
 # Set whether to run Chromium in kiosk mode or not
 if [ ! -z ${KIOSK+x} ] && [ "$KIOSK" -eq "1" ]
   then
