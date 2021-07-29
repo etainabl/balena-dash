@@ -30,6 +30,7 @@ data:
     - WINDOW_POSITION: '0,0'
     - LOCAL_HTTP_DELAY: 0
     - FBCP_DISPLAY: ''
+    - TVSERVICE_CONFIG: 'CEA 16 HDMI'
   defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
     - raspberrypi4-64
@@ -39,4 +40,4 @@ data:
     - intel-nuc
     - genericx86-64-ext
     - raspberrypi400-64
-version: 1.1.4
+version: 1.1.6
