@@ -10,7 +10,7 @@ RUN go build
 
 FROM balenablocks/browser:V1
 
-RUN install_packages cec-utils
+RUN install_packages cec-utils python3
 
 COPY --from=builder /go/src/github.com/mozz100/tohora /home/chromium/tohora
 
