@@ -10,11 +10,13 @@ RUN go build
 
 FROM balenablocks/browser:V1
 
-RUN install_packages cec-utils scrot
+RUN install_packages awscli x11-apps imagemagick
 
 COPY --from=builder /go/src/github.com/mozz100/tohora /home/chromium/tohora
 
 COPY launch.sh /home/chromium/
+COPY screenshot.sh /home/chromium/
+COPY credentials /home/chromium/.aws
 
 # replace command that runs in start script
 COPY alt_start.sh /usr/src/app/
